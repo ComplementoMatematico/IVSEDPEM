@@ -35,7 +35,7 @@
   /* NAVBAR */
   nav#navbar {
     position: fixed; top: 0; width: 100%; z-index: 100;
-    background: rgba(26,42,58,0.97); backdrop-filter: blur(12px);
+    background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(44,79,124,0.5);
     padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;
     height: 60px; transition: box-shadow .3s;
@@ -43,14 +43,14 @@
   .nav-brand { font-family:'DM Mono',monospace; color:#ffffff; font-size:.85rem; letter-spacing:.12em; text-decoration:none; }
   .nav-links { display:flex; gap:0; list-style:none; }
   .nav-links a { color:rgba(255,255,255,.6); text-decoration:none; font-size:.75rem; letter-spacing:.06em; padding:.4rem .85rem; border-radius:4px; transition:all .2s; text-transform:uppercase; }
-  .nav-links a:hover { color:#ffffff; background:rgba(44,79,124,.35); }
+  .nav-links a:hover { color:#ffffff; background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); }
   .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
   .hamburger span { display:block; width:24px; height:2px; background:#ffffff; border-radius:2px; transition:all .3s; }
 
   /* HERO */
   .hero {
   min-height: 100vh;
-  background: linear-gradient(160deg, #0f1d2b 0%, #1a2a3a 45%, #1e3a5f 100%);
+  background: linear-gradient(180deg, var(--navy) 0%, #081535 100%);
   display:flex; align-items:center; justify-content:center;
   position:relative; overflow:visible; /* ← solo cambiar hidden por visible */
   padding:80px 2rem 4rem;
@@ -117,7 +117,8 @@
   /* SECTIONS */
   section { position:relative; z-index:1; }
   .section-inner { max-width:1000px; margin:0 auto; padding:5rem 2rem; }
-  .section-tag { font-family:'DM Mono',monospace; font-size:.65rem; letter-spacing:.25em; text-transform:uppercase; color:var(--steel); margin-bottom:.75rem; }
+  .section-tag { color:rgb(11, 2, 42); }
+  .section-tag2 { color:rgb(196, 163, 0); }
   .section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,2.8rem); font-weight:300; color:var(--navy); margin-bottom:.5rem; line-height:1.2; }
   .section-rule { width:50px; height:2px; background:linear-gradient(to right,var(--steel),transparent); margin:1rem 0 2.5rem; }
 
@@ -182,18 +183,31 @@
   .chip:hover { background:var(--navy); color:var(--gold2); border-color:var(--navy); }
 
   /* ORGANIZACIÓN */
-  #organizacion { background:var(--offwhite); }
-  .org-header { background:linear-gradient(135deg,var(--navy),var(--navy2)); color:white; padding:1.5rem 2rem; border-radius:8px; margin-bottom:2rem; }
-  .org-header p { font-size:.9rem; line-height:1.6; opacity:.85; margin-bottom:.5rem; }
-  .org-header strong { color:#a0c4e0; }
-  .org-members { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-  .org-member { display:flex; align-items:center; gap:1rem; padding:1rem 1.25rem; background:white; border:1px solid var(--light); border-radius:8px; }
-  .org-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--navy),var(--steel)); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-family:'Cormorant Garamond',serif; color:#fff; font-size:1.1rem; }
-  .org-member-name { font-size:.9rem; font-weight:500; color:var(--navy); }
-  .org-member-dept { font-size:.75rem; color:var(--gray); margin-top:2px; }
+  #organizacion { background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); overflow:hidden; position:relative; }
+  #organizacion .section-title { color:white; }
+  .guests-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.8rem; position:relative; z-index:1; }
+  .guest-card { text-align:center; transition:transform .35s cubic-bezier(.34,1.56,.64,1); }
+  .guest-card:hover { transform:translateY(-8px); }
+
+    /* Estudiantes EDO */
+  #estudiantes { background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); overflow:hidden; position:relative; }
+  #estudiantes .section-title { color:white; }
+  .guests-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1.8rem; position:relative; z-index:1; }
+  .guest-card { text-align:center; transition:transform .35s cubic-bezier(.34,1.56,.64,1); }
+  .guest-card:hover { transform:translateY(-8px); }
+
+
+  .group-title {
+  color: #f9f9f9;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin: 1.5rem 0 1rem 0;
+  padding-left: 0.5rem;
+  border-left: 3px solid rgb(196, 190, 13);
+}
 
   /* PROGRAMA */
-  #programa { background:var(--navy); }
+  #programa { background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); }
   #programa .section-title { color:white; }
   #programa .section-tag { color:var(--gold); }
   .program-tabs { display:flex; gap:0; margin-bottom:2rem; border-bottom:1px solid rgba(255,255,255,.1); overflow-x:auto; }
@@ -237,7 +251,7 @@
   .sponsor-name { font-size:.8rem; color:var(--gray); margin-top:.25rem; }
 
   /* CONTACTO */
-  #contacto { background:var(--navy); }
+  #contacto { background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); }
   #contacto .section-title { color:white; }
   #contacto .section-tag { color:var(--gold); }
   .contact-notice { background:rgba(44,79,124,.15); border:1px solid rgba(44,79,124,.4); border-radius:8px; padding:1.5rem 2rem; display:flex; align-items:center; gap:1rem; margin-bottom:2rem; }
@@ -303,6 +317,31 @@
     .hero { padding:70px 1rem 3rem; }
     .org-member { flex-direction:column; text-align:center; }
     .org-avatar { margin:0 auto; }
+  }
+
+  /* ── Grid de estudiantes: centrar la última fila incompleta ── */
+  .estudiantes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .estudiantes-grid .guest-card {
+    /* mismo ancho que tendría en un grid de 5 columnas con gap 1.8rem */
+    flex: 0 0 calc((100% - 4 * 1.8rem) / 5);
+    max-width: calc((100% - 4 * 1.8rem) / 5);
+  }
+  @media(max-width:768px) {
+    .estudiantes-grid .guest-card {
+      flex: 0 0 calc((100% - 1.8rem) / 2);
+      max-width: calc((100% - 1.8rem) / 2);
+    }
+  }
+  @media(max-width:480px) {
+    .estudiantes-grid { gap: 1rem; }
+    .estudiantes-grid .guest-card {
+      flex: 0 0 calc((100% - 1rem) / 2);
+      max-width: calc((100% - 1rem) / 2);
+    }
   }
 
   /* ── TIMELINE HORIZONTAL ── */
@@ -477,6 +516,416 @@
 }
 
 }
+
+
+/* ── Carrusel PEM ── */
+.pem-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.pem-track-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.pem-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+
+.pem-slide {
+  min-width: 100%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Foto grupal con altura controlada */
+.pem-group-photo-wrap {
+  position: relative;
+  width: 100%;
+  height: clamp(280px, 40vw, 420px);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(196,190,13,0.3);
+  margin-top: 0.5rem;
+}
+
+/* Fondo borroso que rellena el marco */
+.pem-group-photo-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(18px) brightness(0.5);
+  transform: scale(1.1);
+}
+
+/* Imagen nítida ajustada proporcionalmente sin recortar */
+.pem-group-photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;      /* se ajusta proporcional, no se corta */
+}
+
+/* Grid 3 columnas */
+.pem-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* Título de grupo */
+.group-title {
+  color: #f9f9f9;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin: 1rem 0 1.2rem 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid rgb(196,190,13);
+}
+
+/* Bloque proyecto */
+.pem-project {
+  margin-top: 2rem;
+  border: 1px solid rgba(196,190,13,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pem-project-inner {
+  padding: 1.5rem 2rem;
+  background: rgba(3, 17, 37, 0);
+}
+
+.pem-project-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgb(196,190,13);
+}
+
+.pem-project-title {
+  color: #f9f9f9;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.pem-project-desc {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Flecha derecha */
+.pem-arrow--next {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  background: rgba(3,17,37,0.8);
+  border: 1px solid rgb(196,190,13);
+  color: rgb(196,190,13);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.pem-arrow--next:hover {
+  background: rgb(196,190,13);
+  color: #031125;
+}
+
+/* Dots */
+.pem-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.2rem;
+}
+
+.pem-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(196,190,13,0.3);
+  border: 1px solid rgb(196,190,13);
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.pem-dot.active {
+  background: rgb(196,190,13);
+}
+
+/* ── Responsive carrusel PEM ── */
+@media (max-width: 600px) {
+
+  .pem-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .guest-photo {
+    width: clamp(100px, 40vw, 150px) !important;
+    height: clamp(100px, 40vw, 150px) !important;
+  }
+
+  .pem-arrow--next {
+    top: 1rem;
+    right: 0.2rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+
+  .pem-project-inner {
+    padding: 1rem 1.2rem;
+  }
+
+  .group-title {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .pem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .pem-grid .guest-card:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .guest-photo {
+    width: clamp(120px, 20vw, 160px) !important;
+    height: clamp(120px, 20vw, 160px) !important;
+  }
+
+}
+
+/* ════════ EID SECTION (carrusel) ════════ */
+.eid-carousel { position: relative; width: 100%; }
+.eid-slide { display: none; width: 100%; box-sizing: border-box; }
+.eid-slide.active { display: block; animation: eidIn .45s cubic-bezier(.22,1,.36,1); }
+@keyframes eidIn { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+
+.eid-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 1.2rem; }
+.eid-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(196,190,13,0.3); border: 1px solid rgb(196,190,13); cursor: pointer; transition: background 0.2s; padding: 0; }
+.eid-dot.active { background: rgb(196,190,13); }
+
+.eid-arrow {
+  position: absolute; top: 50px; right: 0;
+  background: rgba(3,17,37,0.8); border: 1px solid rgb(196,190,13);
+  color: rgb(196,190,13); width: 40px; height: 40px; border-radius: 50%;
+  font-size: 1.1rem; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: background 0.2s; z-index: 10;
+}
+.eid-arrow:hover { background: rgb(196,190,13); color: #031125; }
+
+.eid-col-material { display: flex; flex-direction: column; }
+.eid-col-anim { display: flex; flex-direction: column; align-items: center; }
+
+.eid-anim-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem; font-weight: 300;
+  color: var(--gold2); margin: 0 0 0.4rem;
+}
+.eid-anim-sub {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  line-height: 1.6; margin: 0 0 1.5rem; font-style: italic;
+}
+
+.eid-stage { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
+.eid-scene { display: flex; flex-direction: column; align-items: center; }
+.eid-arrow-down { font-size: 1.2rem; color: rgba(196,190,13,0.6); margin: 0.2rem 0; }
+
+.eid-inputs { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+.eid-input-node {
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  background: rgba(44,79,124,0.15); border: 1px solid rgba(44,79,124,0.4);
+  border-radius: 10px; padding: 0.75rem 1rem; min-width: 90px;
+}
+.eid-node-icon { font-size: 1.6rem; }
+.eid-node-label { font-size: 0.72rem; color: rgba(255,255,255,0.7); letter-spacing: 0.06em; text-align: center; }
+
+.eid-monitor { position: relative; display: flex; flex-direction: column; align-items: center; }
+.eid-monitor-screen {
+  width: 240px; height: 150px; background: #0a0a1a;
+  border: 2px solid #5b4fcf; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0.75rem; box-shadow: 0 0 18px rgba(91,79,207,0.5);
+  overflow: hidden; box-sizing: border-box;
+}
+.eid-monitor-glow {
+  position: absolute; top: -10px; width: 100%; height: calc(100% - 20px);
+  border-radius: 10px; box-shadow: 0 0 30px rgba(91,79,207,0.3); pointer-events: none;
+}
+.eid-monitor-stand { width: 4px; height: 20px; background: #555; }
+.eid-monitor-base { width: 60px; height: 6px; background: #555; border-radius: 3px; }
+
+.eid-screen-code { display: flex; flex-direction: column; gap: 0.35rem; width: 100%; }
+.eid-screen-line {
+  font-family: 'DM Mono', monospace; font-size: 0.62rem; color: #7effa0;
+  white-space: nowrap; overflow: hidden; max-width: 0;
+  transition: max-width 1s ease; line-height: 1.4;
+}
+.eid-screen-line.typed { max-width: 100%; }
+.eid-line-latex { color: #a78bfa; }
+.eid-line-html  { color: #a0c4e0; }
+
+#eidCanvas { border-radius: 4px; }
+
+.graph-btn {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem; padding: 2px 7px;
+  border-radius: 3px; border: 1px solid rgba(167,139,250,0.4);
+  background: rgba(10,10,26,0.8); color: rgba(167,139,250,0.7);
+  cursor: pointer; transition: all 0.2s; letter-spacing: 0.05em;
+}
+.graph-btn:hover { background: rgba(167,139,250,0.2); color: #a78bfa; }
+.graph-btn.active { background: rgba(167,139,250,0.25); border-color: #a78bfa; color: #a78bfa; }
+
+.eid-output { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+/* La guía interactiva permanece oculta hasta que termina la integral */
+.eid-output, #eidArrowToPage {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+.eid-output.revealed, #eidArrowToPage.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.eid-page {
+  background: #f0f4ff; border-radius: 6px; padding: 1rem 1.25rem; width: 160px;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); position: relative;
+}
+.eid-qr { position: absolute; top: 8px; right: 8px; opacity: 0; transition: opacity 0.5s ease; }
+.eid-qr.visible { opacity: 1; }
+.eid-page-header { width: 80%; height: 8px; background: rgba(44,79,124,0.3); border-radius: 4px; margin-bottom: 0.25rem; align-self: flex-start; }
+.eid-page-lines { display: flex; flex-direction: column; gap: 5px; width: 100%; }
+.eid-page-line { height: 5px; background: rgba(44,79,124,0.2); border-radius: 3px; width: 100%; transform: scaleX(0); transform-origin: left; transition: transform 0.5s ease; }
+.eid-page-line.short { width: 60%; }
+.eid-page-line.drawn { transform: scaleX(1); }
+.eid-bulb { font-size: 1.8rem; filter: grayscale(1); transition: filter 0.8s ease; margin-top: 0.25rem; }
+.eid-bulb.on { filter: grayscale(0) drop-shadow(0 0 8px rgba(255,220,50,0.9)); }
+.eid-output-label { font-size: 0.78rem; color: rgba(196,190,13,0.8); letter-spacing: 0.1em; font-family: 'DM Mono', monospace; }
+
+.eid-desc-block { background: rgba(44,79,124,0.08); border: 1px solid rgba(44,79,124,0.25); border-radius: 10px; padding: 1.5rem; margin-top: 1.5rem; }
+.eid-desc-tag { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgb(196,190,13); font-family: 'DM Mono', monospace; }
+.eid-desc-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 300; color: #f9f9f9; margin: 0.5rem 0 0.75rem; }
+.eid-desc-text { font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 1.25rem; }
+.eid-desc-items { display: flex; flex-direction: column; gap: 0.75rem; }
+.eid-desc-item { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.82rem; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.eid-desc-num { font-family: 'DM Mono', monospace; font-size: 0.65rem; color: rgb(196,190,13); background: rgba(196,190,13,0.1); border: 1px solid rgba(196,190,13,0.3); border-radius: 3px; padding: 1px 5px; flex-shrink: 0; margin-top: 2px; }
+
+@media (max-width: 768px) {
+  .eid-slide { padding: 0; }
+}
+
+/* ════════ CURSILLO SECTION (carrusel) ════════ */
+.cur-carousel { position: relative; width: 100%; }
+.cur-slide { display: none; width: 100%; box-sizing: border-box; }
+.cur-slide.active { display: block; animation: eidIn .45s cubic-bezier(.22,1,.36,1); }
+
+.cur-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 1.2rem; }
+.cur-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(196,190,13,0.3); border: 1px solid rgb(196,190,13); cursor: pointer; transition: background 0.2s; padding: 0; }
+.cur-dot.active { background: rgb(196,190,13); }
+
+.cur-arrow {
+  position: absolute; top: 50px; right: 0;
+  background: rgba(3,17,37,0.85); border: 1px solid var(--gold);
+  color: var(--gold); width: 40px; height: 40px; border-radius: 50%;
+  font-size: 1.1rem; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: background 0.2s; z-index: 10;
+}
+.cur-arrow:hover { background: var(--gold); color: #fff; }
+
+/* Slide de bloque: retratos a la izquierda, título a la derecha */
+.cur-block {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: white;
+  border: 1px solid var(--light);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 2rem;
+}
+.cur-block-people {
+  display: flex;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+.cur-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: 130px;
+}
+.cur-person-photo {
+  width: 130px;
+  height: 130px;
+  background: #031125;
+  border-radius: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cur-person-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(to right, var(--steel), transparent);
+}
+.cur-person-name {
+  font-size: 0.82rem;
+  color: var(--navy);
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.cur-block-info { flex: 1; min-width: 240px; }
+.cur-block-tag {
+  font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); font-family: 'DM Mono', monospace;
+}
+.cur-block-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem; font-weight: 400;
+  color: var(--navy); margin: 0.5rem 0 0.75rem; line-height: 1.25;
+}
+.cur-block-text { font-size: 0.9rem; color: #445; line-height: 1.75; margin: 0; }
+
+@media (max-width: 768px) {
+  .cur-slide { padding: 0; }
+  .cur-block { gap: 1.5rem; padding: 1.5rem; justify-content: center; }
+  .cur-block-people { gap: 1rem; }
+  .cur-person { width: 110px; }
+  .cur-person-photo { width: 110px; height: 110px; }
+  .cur-block-info { min-width: 100%; text-align: center; }
+}
+
 </style>
 </head>
 <body>
@@ -583,6 +1032,7 @@
     <a href="#invitados">Invitados</a>
     <a href="#publico">Público</a>
     <a href="#organizacion">Organización</a>
+    <a href="#estudiantes">Estudiantes de EDO</a>
     <a href="#programa">Programa</a>
     <a href="#ubicacion">Ubicación</a>
     <a href="#financiamiento">Financiamiento</a>
@@ -626,6 +1076,23 @@
       <div class="obj-card"><span class="obj-num">02</span><div class="obj-text"><strong>Vinculación universitaria y escolar</strong>Vincular a estudiantes universitarios con docentes y estudiantes de enseñanza media, mediante el desarrollo y presentación de recursos didácticos, actividades de modelación matemática y experiencias de aprendizaje contextualizadas.</div></div>
       <div class="obj-card"><span class="obj-num">03</span><div class="obj-text"><strong>Integración matemática–educativa</strong>Potenciar la integración entre matemática aplicada y educación matemática, favoreciendo la elaboración de propuestas metodológicas para una enseñanza significativa de límites, derivadas e integrales.</div></div>
       <div class="obj-card"><span class="obj-num">04</span><div class="obj-text"><strong>Comunicación y divulgación</strong>Fomentar el desarrollo de competencias de comunicación matemática y divulgación científica en estudiantes de Pedagogía en Educación Matemática, promoviendo la presentación y discusión de proyectos.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PÚBLICO -->
+<section id="publico">
+  <div class="section-inner reveal">
+    <p class="section-tag">¿A quién va dirigido?</p>
+    <h2 class="section-title">Público objetivo</h2>
+    <div class="section-rule"></div>
+    <div class="audience-chips">
+      <span class="chip">Estudiantes de matemática aplicada</span>
+      <span class="chip">Docentes del área de Educación Matemática</span>
+      <span class="chip">Profesores de enseñanza media</span>
+      <span class="chip">Estudiantes de enseñanza media</span>
+      <span class="chip">Estudiantes de Pedagogía en Educación Matemática</span>
+      <span class="chip">Investigadores interesados en cálculo</span>
     </div>
   </div>
 </section>
@@ -908,42 +1375,430 @@ Católica de Chile</span><br>
 </section>
 
 
-<!-- PÚBLICO -->
-<section id="publico">
+
+<!-- Organizacion -->
+<section id="organizacion">
   <div class="section-inner reveal">
-    <p class="section-tag">¿A quién va dirigido?</p>
-    <h2 class="section-title">Público objetivo</h2>
-    <div class="section-rule"></div>
-    <div class="audience-chips">
-      <span class="chip">Estudiantes de matemática aplicada</span>
-      <span class="chip">Docentes del área de Educación Matemática</span>
-      <span class="chip">Profesores de enseñanza media</span>
-      <span class="chip">Estudiantes de enseñanza media</span>
-      <span class="chip">Estudiantes de Pedagogía en Educación Matemática</span>
-      <span class="chip">Investigadores interesados en cálculo</span>
+
+    <h2 class="section-title">Comité Organizador</h2>
+
+    <div class="section-rule"
+         style="background:linear-gradient(to right,var(--steel),transparent);">
     </div>
+
+    <div class="guests-grid">
+
+      <!-- Dr. Eligio Colmenares -->
+      <div class="guest-card">
+
+        <div class="guest-photo-wrap">
+
+          <div class="guest-photo"
+               style="
+                  width:180px;
+                  height:180px;
+                  background:#031125;
+                  border-radius:100px;
+                  overflow:hidden;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  margin:auto;
+               ">
+
+            <img 
+              src="imagenes/Eligio_sf.png"
+              alt="Dr. Eligio Colmenares"
+
+              style="
+                background:linear-gradient(to right,var(--steel),transparent);
+                width:100%;
+                height:100%;
+                object-fit:cover;
+                display:block;
+              "
+            />
+
+          </div>
+
+        </div>
+
+        <div class="guest-name">
+          Dr. Eligio Colmenares
+        </div>
+
+        <div class="guest-affil">
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Coordinador General y organizador
+  </span><br>
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Académico del Departamento de Ciencias Básicas
+  </span><br>
+  <strong style="color: #f9f9f9;">Universidad del Bío-Bío</strong>
+</div>
+
+      </div>
+
+    <!-- Alberth-->
+      <div class="guest-card">
+
+        <div class="guest-photo-wrap">
+
+          <div class="guest-photo"
+               style="
+                  width:180px;
+                  height:180px;
+                  background:#031125;
+                  border-radius:100px;
+                  overflow:hidden;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  margin:auto;
+               ">
+
+            <img 
+              src="imagenes/Alberth_Silgado_sf.png"
+              alt="Dr. Alberth Silgado"
+
+              style="
+                background:linear-gradient(to right,var(--steel),transparent);
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                display:block;
+              "
+            />
+
+          </div>
+
+        </div>
+
+        <div class="guest-name">
+          Dr. Alberth Silgado
+        </div>
+
+        <div class="guest-affil">
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Organizador
+  </span><br>
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Académico del Departamento de Ciencias Básicas
+  </span><br>
+  <strong style="color: #f9f9f9;">Universidad del Bío-Bío</strong>
+       </div>
+
+      </div>
+
+    
+      <!-- Mg. Catalina Retamal -->
+      <div class="guest-card">
+
+        <div class="guest-photo-wrap">
+
+          <div class="guest-photo"
+               style="
+                  width:180px;
+                  height:180px;
+                  background:#031125;
+                  border-radius:100px;
+                  overflow:hidden;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  margin:auto;
+               ">
+
+            <img 
+              src="imagenes/Catalina_Retamal.png"
+              alt="Mg. Catalina Retamal"
+
+              style="
+                background:linear-gradient(to right,var(--steel),transparent);
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                display:block;
+              "
+            />
+
+          </div>
+
+        </div>
+
+        <div class="guest-name">
+          Mg. Catalina Retamal
+        </div>
+
+        <div class="guest-affil">
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Organizadora
+  </span><br>
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Estudiante del Doctorado de Matemática Aplicada
+  </span><br>
+  <strong style="color: #f9f9f9;">Universidad del Bío-Bío</strong>
+       </div>
+
+      </div>
+
+      <!-- Invitado 5 -->
+      <div class="guest-card">
+
+        <div class="guest-photo-wrap">
+
+          <div class="guest-photo"
+               style="
+                  width:180px;
+                  height:180px;
+                  background:#031125;
+                  border-radius:100px;
+                  overflow:hidden;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  margin:auto;
+               ">
+
+            <img 
+              src="imagenes/Bastiani_Calabrano.png"
+              alt="Prof. Bastiani Calabrano"
+
+              style="
+                background:linear-gradient(to right,var(--steel),transparent);
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                display:block;
+              "
+            />
+
+          </div>
+
+        </div>
+
+        <div class="guest-name">
+          Prof. Bastiani Calabrano
+        </div>
+
+         <div class="guest-affil">
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Organizador
+  </span><br>
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Prof. Educación Media en Educación Matemática
+  </span>
+       </div>
+
+
+      </div>
+
+  <!-- Dr. Rodrigo Panes -->
+      <div class="guest-card">
+
+        <div class="guest-photo-wrap">
+
+          <div class="guest-photo"
+               style="
+                  width:180px;
+                  height:180px;
+                  background:#031125;
+                  border-radius:100px;
+                  overflow:hidden;
+                  display:flex;
+                  align-items:center;
+                  justify-content:center;
+                  margin:auto;
+               ">
+
+            <img 
+              src="imagenes/Panes_sf.png"
+              alt="Dr. Rodrigo Panes"
+
+              style="
+                background:linear-gradient(to right,var(--steel),transparent);
+                width:100%;
+                height:100%;
+                object-fit:contain;
+                display:block;
+              "
+            />
+
+          </div>
+
+        </div>
+
+        <div class="guest-name">
+          Dr. Rodrigo Panes
+        </div>
+
+        <div class="guest-affil">
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Organizador
+  </span><br>
+  <span style="color: #f9f9f9;">
+    <span style="color: rgb(196, 190, 13);">◈</span> Jefe de carrera de Pedagogía en Educación Matemática
+  </span><br>
+  <strong style="color: #f9f9f9;">Universidad del Bío-Bío</strong>
+</div>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<!-- ORGANIZACIÓN -->
-<section id="organizacion">
+<!-- Docentes en Formación PEM -->
+<section id="estudiantes">
   <div class="section-inner reveal">
-    <p class="section-tag">Quiénes organizan</p>
-    <h2 class="section-title">Organización</h2>
-    <div class="section-rule"></div>
-    <div class="org-header">
-      <p>Actividad en el marco del <strong>proyecto de Convenio de Desempeño de la Facultad de Ciencias (UBB)</strong></p>
-      <p><strong>Coordinación General:</strong> Dr. Eligio Colmenares</p>
+
+    <p class="section-tag" style="color:var(--gold);">Generación 2026</p>
+    <h2 class="section-title">Docentes en Formación <br>Ecuaciones Diferenciales <br>Generación 2026</h2>
+    <div class="section-rule" style="background:linear-gradient(to right,var(--steel),transparent);"></div>
+
+    <div class="guests-grid estudiantes-grid">
+
+      <!-- Estudiante 1 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED1.png" alt="Felipe Carrasco Campos" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Felipe Carrasco Campos</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 2 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED2.png" alt="Víctor Díaz Bocaz" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Víctor Díaz Bocaz</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 3 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED3.png" alt="Braulio Gallegos Navarrete" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Braulio Gallegos Navarrete</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 4 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED4.png" alt="Nelson Ortiz Espinoza" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Nelson Ortiz Espinoza</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 5 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED5.png" alt="Daniela Pardo Aguirre" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Daniela Pardo Aguirre</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 6 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED6.png" alt="Manuel Quezada Parada" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Manuel Quezada Parada</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 7 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED7.png" alt="Fabián San Martín Male" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Fabián San Martín Male</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 8 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED8.png" alt="Javier Téllez Cancino" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Javier Téllez Cancino</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
+      <!-- Estudiante 9 -->
+      <div class="guest-card">
+        <div class="guest-photo-wrap">
+          <div class="guest-photo" style="width:180px;height:180px;background:#031125;border-radius:100px;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:auto;">
+            <img src="imagenes/ED9.png" alt="Antonia Valenzuela Rojas" style="background:linear-gradient(to right,var(--steel),transparent);width:100%;height:100%;object-fit:cover;display:block;"/>
+          </div>
+        </div>
+        <div class="guest-name">Antonia Valenzuela Rojas</div>
+        <div class="guest-affil">
+          <span style="color:#f9f9f9;"><span style="color:rgb(196,190,13);">◈</span> Docente en formación</span><br>
+          <span style="color:#f9f9f9;">Pedagogía en Educación Matemática</span><br>
+          <strong style="color:#f9f9f9;">Universidad del Bío-Bío</strong>
+        </div>
+      </div>
+
     </div>
-    <div class="org-members">
-      <div class="org-member"><div class="org-avatar">RP</div><div><div class="org-member-name">Dr. Rodrigo Panes</div><div class="org-member-dept">Escuela de Pedagogía en Educación Matemática, UBB</div></div></div>
-      <div class="org-member"><div class="org-avatar">AS</div><div><div class="org-member-name">Dr. Alberth Silgado</div><div class="org-member-dept">Departamento de Ciencias Básicas, UBB</div></div></div>
-      <div class="org-member"><div class="org-avatar">CR</div><div><div class="org-member-name">Mg. Catalina Retamal Fuentes</div><div class="org-member-dept">Departamento de Matemática, UBB</div></div></div>
-      <div class="org-member"><div class="org-avatar">BC</div><div><div class="org-member-name">Prof. Bastiani Calabrano</div><div class="org-member-dept">Escuela de Pedagogía en Educ. Matemática, UBB</div></div></div>
-    </div>
+
   </div>
 </section>
-  
+
 <!-- PROGRAMA -->
 <section id="programa">
   <div class="section-inner reveal">
@@ -1124,25 +1979,132 @@ Católica de Chile</span><br>
 </section>
 
 <!-- RECURSOS EID -->
-
-<section id="recursos-eid" style="background:var(--navy);">
+<section id="recursos-eid" style="background: linear-gradient(180deg, var(--navy) 0%, #081535 100%);">
   <div class="section-inner reveal">
     <p class="section-tag" style="color:var(--gold);">Material didáctico</p>
     <h2 class="section-title" style="color:white;">Recursos del Espacio de Interacción Didáctica</h2>
     <div class="section-rule" style="background:linear-gradient(to right,var(--steel),transparent);"></div>
-    <div style="margin-bottom:2rem;">
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(44,79,124,0.25);border-radius:10px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
-        <div style="font-size:2rem;">📖</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--gold2);margin:0;">Material didáctico complementario</h3>
-        <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.75;margin:0;">En esta sección se publicará el material utilizado durante el Espacio de Interacción Didáctica: actividades, guías de trabajo y propuestas pedagógicas para la enseñanza del cálculo en el contexto escolar, junto con guías para la creación de páginas web interactivas mediante HTML e inteligencia artificial, orientadas a docentes sin experiencia previa en programación.</p>
-        <a href="URL_MATERIAL_AQUI" target="_blank" style="display:inline-block;align-self:flex-start;margin-top:.25rem;padding:.65rem 1.25rem;background:rgba(44,79,124,0.15);border:1px solid rgba(44,79,124,0.45);border-radius:6px;color:#a0c4e0;font-size:.82rem;font-family:'DM Mono',monospace;text-decoration:none;transition:background .2s;">
-          Acceder al material →
-        </a>
+
+    <div class="eid-carousel" id="eidCarousel">
+
+      <div class="eid-dots">
+        <button class="eid-dot active" onclick="goToEid(0)"></button>
+        <button class="eid-dot" onclick="goToEid(1)"></button>
       </div>
-    </div>
-    <div style="background:rgba(44,79,124,0.08);border:1px dashed rgba(44,79,124,0.3);border-radius:8px;padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;">
-      <span style="font-size:1.4rem;">🔔</span>
-      <p style="font-size:.85rem;color:rgba(255,255,255,.5);font-style:italic;line-height:1.6;">Los recursos estarán disponibles próximamente. Te invitamos a revisar esta sección durante y después del evento.</p>
+
+      <!-- SLIDE 1: material -->
+      <div class="eid-slide active" id="eidSlide1">
+      <div class="eid-col-material">
+        <div style="background:linear-gradient(180deg,var(--navy) 0%,#081535 100%);border:1px solid rgba(44,79,124,0.25);border-radius:10px;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;margin-bottom:1.25rem;">
+          <div style="font-size:2rem;">📖</div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300;color:var(--gold2);margin:0;">Material didáctico complementario</h3>
+          <p style="font-size:.9rem;color:rgba(255,255,255,.65);line-height:1.75;margin:0;">En esta sección se publicará el material utilizado durante el Espacio de Interacción Didáctica: actividades, guías de trabajo y propuestas pedagógicas para la enseñanza del cálculo en el contexto escolar, junto con guías para la creación de páginas web interactivas mediante HTML e inteligencia artificial, orientadas a docentes sin experiencia previa en programación.</p>
+          <a href="URL_MATERIAL_AQUI" target="_blank" style="display:inline-block;align-self:flex-start;margin-top:.25rem;padding:.65rem 1.25rem;background:rgba(44,79,124,0.15);border:1px solid rgba(44,79,124,0.45);border-radius:6px;color:#a0c4e0;font-size:.82rem;font-family:'DM Mono',monospace;text-decoration:none;">
+            Acceder al material →
+          </a>
+        </div>
+        <div style="background:rgba(44,79,124,0.08);border:1px dashed rgba(44,79,124,0.3);border-radius:8px;padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;">
+          <span style="font-size:1.4rem;">🔔</span>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.5);font-style:italic;line-height:1.6;margin:0;">Los recursos estarán disponibles próximamente. Te invitamos a revisar esta sección durante y después del evento.</p>
+        </div>
+      </div>
+      </div><!-- /slide1 -->
+
+      <!-- SLIDE 2: animación -->
+      <div class="eid-slide" id="eidSlide2">
+      <div class="eid-col-anim">
+        <h3 class="eid-anim-title">Matemática Aplicada en el aula</h3>
+        <p class="eid-anim-sub">Las TIC's como medio para conectar problemas reales con el aprendizaje significativo de Límites, Derivadas e Integrales</p>
+
+        <div class="eid-stage" id="eidStage">
+
+          <div class="eid-scene">
+            <div class="eid-inputs">
+              <div class="eid-input-node"><span class="eid-node-icon">🌍</span><span class="eid-node-label">Problemas reales</span></div>
+              <div class="eid-input-node"><span class="eid-node-icon">📋</span><span class="eid-node-label">Currículum</span></div>
+              <div class="eid-input-node"><span class="eid-node-icon">💻</span><span class="eid-node-label">Tecnología</span></div>
+            </div>
+            <div class="eid-arrow-down">↓</div>
+          </div>
+
+          <div class="eid-scene">
+            <div class="eid-monitor">
+              <div class="eid-monitor-screen" id="eidScreen">
+                <div class="eid-screen-code" id="screenCode">
+                  <div class="eid-screen-line" id="sLine1"></div>
+                  <div class="eid-screen-line eid-line-latex" id="sLine2"></div>
+                  <div class="eid-screen-line eid-line-html" id="sLine3"></div>
+                  <div class="eid-screen-line eid-line-html" id="sLine4"></div>
+                </div>
+                <div id="graphWrap" style="display:none;flex-direction:column;align-items:center;gap:4px;width:100%;">
+                  <canvas id="eidCanvas" width="240" height="130"></canvas>
+                  <div style="display:flex;gap:4px;margin-top:2px;">
+                    <button class="graph-btn active" onclick="setPhase(0)">f(x)</button>
+                    <button class="graph-btn" onclick="setPhase(1)">lím</button>
+                    <button class="graph-btn" onclick="setPhase(2)">f'(x)</button>
+                    <button class="graph-btn" onclick="setPhase(3)">∫</button>
+                  </div>
+                </div>
+              </div>
+              <div class="eid-monitor-stand"></div>
+              <div class="eid-monitor-base"></div>
+              <div class="eid-monitor-glow"></div>
+            </div>
+            <div class="eid-arrow-down" id="eidArrowToPage">↓</div>
+          </div>
+
+          <div class="eid-scene">
+            <div class="eid-output" id="eidOutput">
+              <div class="eid-page">
+                <div class="eid-qr" id="eidQr">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <rect x="1" y="1" width="12" height="12" rx="1" stroke="#5b4fcf" stroke-width="1.5" fill="none"/>
+                    <rect x="4" y="4" width="6" height="6" rx="0.5" fill="#5b4fcf"/>
+                    <rect x="19" y="1" width="12" height="12" rx="1" stroke="#5b4fcf" stroke-width="1.5" fill="none"/>
+                    <rect x="22" y="4" width="6" height="6" rx="0.5" fill="#5b4fcf"/>
+                    <rect x="1" y="19" width="12" height="12" rx="1" stroke="#5b4fcf" stroke-width="1.5" fill="none"/>
+                    <rect x="4" y="22" width="6" height="6" rx="0.5" fill="#5b4fcf"/>
+                    <rect x="19" y="19" width="4" height="4" fill="#5b4fcf"/>
+                    <rect x="25" y="19" width="4" height="4" fill="#5b4fcf"/>
+                    <rect x="19" y="25" width="4" height="4" fill="#5b4fcf"/>
+                    <rect x="25" y="25" width="4" height="4" fill="#5b4fcf"/>
+                    <rect x="14" y="1" width="3" height="3" fill="#5b4fcf"/>
+                    <rect x="14" y="6" width="3" height="3" fill="#5b4fcf"/>
+                    <rect x="1" y="14" width="3" height="3" fill="#5b4fcf"/>
+                    <rect x="6" y="14" width="3" height="3" fill="#5b4fcf"/>
+                    <rect x="14" y="14" width="3" height="3" fill="#5b4fcf"/>
+                  </svg>
+                </div>
+                <div class="eid-page-header"></div>
+                <div class="eid-page-lines">
+                  <div class="eid-page-line"></div>
+                  <div class="eid-page-line short"></div>
+                  <div class="eid-page-line"></div>
+                  <div class="eid-page-line short"></div>
+                </div>
+                <div class="eid-bulb" id="eidBulb">💡</div>
+              </div>
+              <span class="eid-output-label">Guía interactiva</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="eid-desc-block">
+          <span class="eid-desc-tag">◈ Enfoque pedagógico</span>
+          <h4 class="eid-desc-title">Conectar el aula con el mundo real</h4>
+          <p class="eid-desc-text">La propuesta integra tres ejes: problemas del contexto real del estudiante, los objetivos del currículum nacional, y las TIC como herramienta mediadora.</p>
+          <div class="eid-desc-items">
+            <div class="eid-desc-item"><span class="eid-desc-num">01</span><span>Límites como aproximación intuitiva a fenómenos continuos</span></div>
+            <div class="eid-desc-item"><span class="eid-desc-num">02</span><span>Derivadas como razón de cambio en contextos reales</span></div>
+            <div class="eid-desc-item"><span class="eid-desc-num">03</span><span>Integrales como acumulación y área bajo una curva</span></div>
+          </div>
+        </div>
+      </div>
+      </div><!-- /slide2 -->
+
+      <button class="eid-arrow" onclick="shiftEid()">&#8594;</button>
+
     </div>
   </div>
 </section>
@@ -1154,25 +2116,105 @@ Católica de Chile</span><br>
     <p class="section-tag">Material de formación docente</p>
     <h2 class="section-title">Recursos del Cursillo</h2>
     <div class="section-rule"></div>
-    <div style="margin-bottom:2rem;">
-      <div style="background:white;border:1px solid var(--light);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
-        <div style="font-size:2rem;">📖</div>
-        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin:0;">Material complementario de las sesiones</h3>
-        <p style="font-size:.9rem;color:#445;line-height:1.75;margin:0;">En esta sección se publicará el material correspondiente a las seis sesiones del Cursillo de Actualización Docente <em>Límites, Derivadas e Integrales</em>: presentaciones, ejercicios y recursos de apoyo para fortalecer la comprensión conceptual y su enseñanza en el aula, junto con guías para la creación de páginas web interactivas mediante HTML e inteligencia artificial, orientadas a docentes sin experiencia previa en programación.</p>
-        <a href="URL_MATERIAL_AQUI" target="_blank" style="display:inline-block;align-self:flex-start;margin-top:.25rem;padding:.65rem 1.25rem;background:rgba(44,79,124,0.08);border:1px solid rgba(44,79,124,0.45);border-radius:6px;color:var(--navy);font-size:.82rem;font-family:'DM Mono',monospace;text-decoration:none;transition:background .2s;">
-          Acceder al material →
-        </a>
+
+    <div class="cur-carousel" id="curCarousel">
+
+      <div class="cur-dots">
+        <button class="cur-dot active" onclick="goToCur(0)"></button>
+        <button class="cur-dot" onclick="goToCur(1)"></button>
+        <button class="cur-dot" onclick="goToCur(2)"></button>
+        <button class="cur-dot" onclick="goToCur(3)"></button>
       </div>
-    </div>
-    <div style="background:var(--light);border-radius:8px;padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;">
-      <span style="font-size:1.4rem;">🔔</span>
-      <p style="font-size:.85rem;color:var(--gray);font-style:italic;line-height:1.6;">Los recursos estarán disponibles próximamente. Te invitamos a revisar esta sección durante y después del evento.</p>
+
+      <!-- SLIDE 0: material (contenido actual) -->
+      <div class="cur-slide active" id="curSlide0">
+        <div style="margin-bottom:2rem;">
+          <div style="background:white;border:1px solid var(--light);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:1.75rem;display:flex;flex-direction:column;gap:1rem;">
+            <div style="font-size:2rem;">📖</div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--navy);margin:0;">Material complementario de las sesiones</h3>
+            <p style="font-size:.9rem;color:#445;line-height:1.75;margin:0;">En esta sección se publicará el material correspondiente a las seis sesiones del Cursillo de Actualización Docente <em>Límites, Derivadas e Integrales</em>: presentaciones, ejercicios y recursos de apoyo para fortalecer la comprensión conceptual y su enseñanza en el aula, junto con guías para la creación de páginas web interactivas mediante HTML e inteligencia artificial, orientadas a docentes sin experiencia previa en programación.</p>
+            <a href="URL_MATERIAL_AQUI" target="_blank" style="display:inline-block;align-self:flex-start;margin-top:.25rem;padding:.65rem 1.25rem;background:rgba(44,79,124,0.08);border:1px solid rgba(44,79,124,0.45);border-radius:6px;color:var(--navy);font-size:.82rem;font-family:'DM Mono',monospace;text-decoration:none;transition:background .2s;">
+              Acceder al material →
+            </a>
+          </div>
+        </div>
+        <div style="background:var(--light);border-radius:8px;padding:1.25rem 1.75rem;display:flex;align-items:center;gap:1rem;">
+          <span style="font-size:1.4rem;">🔔</span>
+          <p style="font-size:.85rem;color:var(--gray);font-style:italic;line-height:1.6;margin:0;">Los recursos estarán disponibles próximamente. Te invitamos a revisar esta sección durante y después del evento.</p>
+        </div>
+      </div><!-- /curSlide0 -->
+
+      <!-- SLIDE 1: Bloque 01 -->
+      <div class="cur-slide" id="curSlide1">
+        <div class="cur-block">
+          <div class="cur-block-people">
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Alberth_Silgado_sf.png" alt="Dr. Alberth Silgado" style="object-fit:contain;"></div>
+              <div class="cur-person-name">Dr. Alberth Silgado</div>
+            </div>
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Bastiani_Calabrano.png" alt="Prof. Bastiani Calabrano"></div>
+              <div class="cur-person-name">Prof. Bastiani Calabrano</div>
+            </div>
+          </div>
+          <div class="cur-block-info">
+            <span class="cur-block-tag">◈ Cursillo</span>
+            <h3 class="cur-block-title">Bloque 01: Límites y elaboración de actividades interactivas</h3>
+            <p class="cur-block-text">Material correspondiente al primer bloque del cursillo, dedicado al concepto de límite y al desarrollo de actividades interactivas para su enseñanza en el aula. Disponible próximamente.</p>
+          </div>
+        </div>
+      </div><!-- /curSlide1 -->
+
+      <!-- SLIDE 2: Bloque 02 -->
+      <div class="cur-slide" id="curSlide2">
+        <div class="cur-block">
+          <div class="cur-block-people">
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Eligio_sf.png" alt="Dr. Eligio Colmenares"></div>
+              <div class="cur-person-name">Dr. Eligio Colmenares</div>
+            </div>
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Bastiani_Calabrano.png" alt="Prof. Bastiani Calabrano"></div>
+              <div class="cur-person-name">Prof. Bastiani Calabrano</div>
+            </div>
+          </div>
+          <div class="cur-block-info">
+            <span class="cur-block-tag">◈ Cursillo</span>
+            <h3 class="cur-block-title">Bloque 02: Derivadas y elaboración de actividades interactivas</h3>
+            <p class="cur-block-text">Material correspondiente al segundo bloque del cursillo, dedicado al concepto de derivada y al desarrollo de actividades interactivas para su enseñanza en el aula. Disponible próximamente.</p>
+          </div>
+        </div>
+      </div><!-- /curSlide2 -->
+
+      <!-- SLIDE 3: Bloque 03 -->
+      <div class="cur-slide" id="curSlide3">
+        <div class="cur-block">
+          <div class="cur-block-people">
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Eligio_sf.png" alt="Dr. Eligio Colmenares"></div>
+              <div class="cur-person-name">Dr. Eligio Colmenares</div>
+            </div>
+            <div class="cur-person">
+              <div class="cur-person-photo"><img src="imagenes/Bastiani_Calabrano.png" alt="Prof. Bastiani Calabrano"></div>
+              <div class="cur-person-name">Prof. Bastiani Calabrano</div>
+            </div>
+          </div>
+          <div class="cur-block-info">
+            <span class="cur-block-tag">◈ Cursillo</span>
+            <h3 class="cur-block-title">Bloque 03: Integrales y elaboración de actividades interactivas</h3>
+            <p class="cur-block-text">Material correspondiente al tercer bloque del cursillo, dedicado al concepto de integral y al desarrollo de actividades interactivas para su enseñanza en el aula. Disponible próximamente.</p>
+          </div>
+        </div>
+      </div><!-- /curSlide3 -->
+
+      <button class="cur-arrow" onclick="shiftCur()">&#8594;</button>
+
     </div>
   </div>
 </section>
 
 <!-- GALERÍA -->
-<section id="galeria" style="background:var(--navy); overflow:hidden;">
+<section id="galeria" style="background: linear-gradient(180deg, var(--navy) 0%, #081535 100%); overflow:hidden;">
   <div class="section-inner reveal">
     <p class="section-tag" style="color:var(--gold);">Memoria histórica</p>
     <h2 class="section-title" style="color:white;">Galería Histórica del Seminario</h2>
@@ -1253,11 +2295,7 @@ Católica de Chile</span><br>
 </div>
 <!-- CARRUSEL + COLLAGE -->
 <div style="margin-top:4rem;">
-  <p class="section-tag" style="color:var(--gold); margin-bottom:1.5rem;">Momentos del seminario</p>
-
- <!-- CARRUSEL + COLLAGE -->
-<div style="margin-top:4rem;">
-  <p class="section-tag" style="color:var(--gold); margin-bottom:1.5rem;">Momentos del seminario</p>
+  <p class="section-tag" style="color:white; margin-bottom:1.5rem;"> Momentos del seminario</p>
 
   <!-- CARRUSEL -->
   <div class="carousel-wrap" style="position:relative; overflow:hidden; border-radius:12px;">
@@ -1622,7 +2660,7 @@ Católica de Chile</span><br>
 
   <!-- COLLAGE -->
   <div style="margin-top:3rem;">
-    <p class="section-tag" style="color:var(--gold); margin-bottom:1.5rem;">Todas las fotos</p>
+    <p class="section-tag" style="color:white; margin-bottom:1.5rem;">Todas las fotos</p>
     <div id="collage" style="columns:4; gap:8px;"></div>
   </div>
 </div>
@@ -1798,17 +2836,151 @@ Católica de Chile</span><br>
 
 
 <script>
+/* ── Menú y utilidades ── */
 function toggleTL(id) {
   const card = document.getElementById(id);
   card.classList.toggle('tl-card-open');
-  }
-  function toggleMenu() { document.getElementById('navLinks').classList.toggle('open'); }
-  function showDay(n) {
-    document.querySelectorAll('.prog-tab').forEach((t,i) => t.classList.toggle('active',i===n));
-    document.querySelectorAll('.prog-panel').forEach((p,i) => p.classList.toggle('active',i===n));
-  }
-  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+}
+
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+function showDay(n) {
+  document.querySelectorAll('.prog-tab').forEach((t,i) => t.classList.toggle('active', i===n));
+  document.querySelectorAll('.prog-panel').forEach((p,i) => p.classList.toggle('active', i===n));
+}
+
+/* ── Reveal on scroll ── */
+const observer = new IntersectionObserver(
+  entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: .1 }
+);
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+
+
+/* ════════ EID Animación ════════ */
+function runEidAnimation() {
+  resetEidAnimation();
+  // Tipeo en el monitor
+  setTimeout(() => { const l=document.getElementById('sLine1'); if(l){l.textContent='\u25b6 OA: concepto de integral';l.classList.add('typed');} }, 400);
+  setTimeout(() => { const l=document.getElementById('sLine2'); if(l){l.textContent='\u222b f(x)dx = F(b) - F(a)';l.classList.add('typed');} }, 1400);
+  setTimeout(() => { const l=document.getElementById('sLine3'); if(l){l.textContent='<canvas id=\"grafico\">';l.classList.add('typed');} }, 2400);
+  setTimeout(() => { const l=document.getElementById('sLine4'); if(l){l.textContent='</canvas>';l.classList.add('typed');} }, 3000);
+  // Mostrar grafica
+  setTimeout(() => {
+    const code=document.getElementById('screenCode');
+    const gw=document.getElementById('graphWrap');
+    if(code) code.style.display='none';
+    if(gw){ gw.style.display='flex'; const cv=document.getElementById('eidCanvas'); if(cv) drawGraph(cv); }
+  }, 3800);
+}
+
+function resetEidAnimation() {
+  if(graphAnimId){cancelAnimationFrame(graphAnimId);graphAnimId=null;}
+  clearTimeout(autoPhaseTimer);
+  eidPageShown=false;
+  document.getElementById('eidOutput')?.classList.remove('revealed');
+  document.getElementById('eidArrowToPage')?.classList.remove('revealed');
+  document.getElementById('eidBulb')?.classList.remove('on');
+  document.getElementById('eidQr')?.classList.remove('visible');
+  document.querySelectorAll('.eid-page-line').forEach(b=>b.classList.remove('drawn'));
+  ['sLine1','sLine2','sLine3','sLine4'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent='';el.classList.remove('typed');}});
+  const code=document.getElementById('screenCode'); if(code) code.style.display='flex';
+  const gw=document.getElementById('graphWrap'); if(gw) gw.style.display='none';
+  document.querySelectorAll('.graph-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
+}
+
+// Revela la hoja/guía interactiva: se llama SOLO al terminar la integral
+function revealEidPage(){
+  if(eidPageShown) return;
+  eidPageShown=true;
+  document.getElementById('eidArrowToPage')?.classList.add('revealed');
+  document.getElementById('eidOutput')?.classList.add('revealed');
+  setTimeout(()=>{
+    document.getElementById('eidBulb')?.classList.add('on');
+    document.getElementById('eidQr')?.classList.add('visible');
+    document.querySelectorAll('.eid-page-line').forEach((b,i)=>setTimeout(()=>b.classList.add('drawn'), i*180));
+  }, 500);
+}
+
+let graphPhase=0, graphAnimId=null, autoPhaseTimer=null, eidPageShown=false;
+function setPhase(p){
+  graphPhase=p;
+  document.querySelectorAll('.graph-btn').forEach((b,i)=>b.classList.toggle('active',i===p));
+  clearTimeout(autoPhaseTimer);
+  const cv=document.getElementById('eidCanvas'); if(cv) runPhase(cv,p);
+}
+function drawGraph(cv){
+  graphPhase=0;
+  document.querySelectorAll('.graph-btn').forEach((b,i)=>b.classList.toggle('active',i===0));
+  runPhase(cv,0,true);
+}
+function runPhase(canvas,phase,autoAdvance){
+  if(graphAnimId)cancelAnimationFrame(graphAnimId);
+  clearTimeout(autoPhaseTimer);
+  const ctx=canvas.getContext('2d'),W=canvas.width,H=canvas.height,ox=W/2,oy=H/2+8,sx=34,sy=22;
+  function fx(x){return x*x*x-3*x;}
+  function dfx(x){return 3*x*x-3;}
+  function toC(x,y){return{px:ox+x*sx,py:oy-y*sy};}
+  function clr(){ctx.fillStyle='#0a0a1a';ctx.fillRect(0,0,W,H);}
+  function ax(){ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=0.8;ctx.beginPath();ctx.moveTo(0,oy);ctx.lineTo(W,oy);ctx.moveTo(ox,0);ctx.lineTo(ox,H);ctx.stroke();}
+  function cv2(a){ctx.strokeStyle='rgba(167,139,250,'+(a||1)+')';ctx.lineWidth=1.6;ctx.beginPath();for(let px=0;px<=W;px++){const x=(px-ox)/sx;const p=toC(x,fx(x));px===0?ctx.moveTo(p.px,p.py):ctx.lineTo(p.px,p.py);}ctx.stroke();}
+  function lb(t){ctx.fillStyle='#a78bfa';ctx.font='8px DM Mono,monospace';ctx.fillText(t,4,11);}
+  if(phase===0){eidPageShown=false;document.getElementById('eidOutput')?.classList.remove('revealed');document.getElementById('eidArrowToPage')?.classList.remove('revealed');document.getElementById('eidBulb')?.classList.remove('on');document.getElementById('eidQr')?.classList.remove('visible');document.querySelectorAll('.eid-page-line').forEach(b=>b.classList.remove('drawn'));clr();ax();const pts=[];for(let px=0;px<=W;px++){const x=(px-ox)/sx;pts.push(toC(x,fx(x)));}let i=0;(function a(){ctx.strokeStyle='#a78bfa';ctx.lineWidth=1.6;ctx.beginPath();const e=Math.min(i+20,pts.length);for(let j=0;j<e;j++)j===0?ctx.moveTo(pts[j].px,pts[j].py):ctx.lineTo(pts[j].px,pts[j].py);ctx.stroke();i+=20;if(i<pts.length){graphAnimId=requestAnimationFrame(a);}else{lb('f(x) = x\u00b3 - 3x');if(autoAdvance)autoPhaseTimer=setTimeout(()=>setPhase(1),2500);}})();}
+  if(phase===1){const pt=toC(1,fx(1));let t=0;(function a(){clr();ax();cv2(0.4);lb('l\u00edm f(x) = -2  (x\u21921)');const offs=[2.5,2,1.5,1,0.6,0.3,0.1];const pr=Math.min(t/80,1);const off=offs[Math.min(Math.floor(pr*(offs.length-1)),offs.length-1)];const pL=toC(1-off,fx(1-off)),pR=toC(1+off,fx(1+off));ctx.fillStyle='#7effa0';ctx.beginPath();ctx.arc(pL.px,pL.py,3,0,7);ctx.fill();ctx.fillStyle='#f9a94a';ctx.beginPath();ctx.arc(pR.px,pR.py,3,0,7);ctx.fill();ctx.strokeStyle='rgba(255,255,255,0.4)';ctx.lineWidth=0.8;ctx.setLineDash([2,2]);ctx.beginPath();ctx.moveTo(pL.px,pL.py);ctx.lineTo(pt.px,pt.py);ctx.stroke();ctx.beginPath();ctx.moveTo(pR.px,pR.py);ctx.lineTo(pt.px,pt.py);ctx.stroke();ctx.setLineDash([]);if(pr>0.7){ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(pt.px,pt.py,4,0,7);ctx.fill();}t++;if(t<100){graphAnimId=requestAnimationFrame(a);}else{if(autoAdvance!==false)autoPhaseTimer=setTimeout(()=>setPhase(2),2000);}})();}
+  if(phase===2){let t=0;const TF=120;(function a(){clr();ax();cv2(0.35);lb("f'(x) = 3x\u00b2 - 3");const x0=-2.5+(t/TF)*5,y0=fx(x0),sl=dfx(x0);const p0=toC(x0,y0),dx=1.2;const p1=toC(x0-dx,y0-sl*dx),p2=toC(x0+dx,y0+sl*dx);ctx.strokeStyle='#f9a94a';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(p1.px,p1.py);ctx.lineTo(p2.px,p2.py);ctx.stroke();ctx.fillStyle='#f9a94a';ctx.beginPath();ctx.arc(p0.px,p0.py,3,0,7);ctx.fill();t++;if(t<=TF){graphAnimId=requestAnimationFrame(a);}else{if(autoAdvance!==false)autoPhaseTimer=setTimeout(()=>setPhase(3),1500);}})();}
+  if(phase===3){const A=-1,B=2,mx=18;let n=2,st=0;(function a(){clr();ax();const dx=(B-A)/n;let ar=0;for(let i=0;i<n;i++){const xi=A+i*dx+dx/2,yi=fx(xi);ar+=yi*dx;const p1=toC(A+i*dx,0),p2=toC(A+(i+1)*dx,yi);const rx=Math.min(p1.px,p2.px),rw=Math.abs(p2.px-p1.px),ry=Math.min(oy,p2.py),rh=Math.abs(p2.py-oy);ctx.fillStyle=yi>=0?'rgba(126,255,160,0.25)':'rgba(249,169,74,0.25)';ctx.fillRect(rx,ry,rw,rh);ctx.strokeStyle=yi>=0?'rgba(126,255,160,0.6)':'rgba(249,169,74,0.6)';ctx.lineWidth=0.7;ctx.strokeRect(rx,ry,rw,rh);}cv2(1);ctx.fillStyle='#a78bfa';ctx.font='8px DM Mono,monospace';ctx.fillText('\u222b\u208b\u2081\u00b2 \u2248'+ar.toFixed(2)+' (n='+n+')',4,11);n=Math.min(n+1,mx);st++;if(st<mx){autoPhaseTimer=setTimeout(()=>{graphAnimId=requestAnimationFrame(a);},180);}else{revealEidPage();if(autoAdvance!==false)autoPhaseTimer=setTimeout(()=>setPhase(0),6000);}})();}
+}
+
+// Auto-iniciar al hacer scroll a la seccion
+/* ── Carrusel EID: navegación ── */
+let eidIndex = 0;
+const eidTotal = 2;
+let eidTimer = null;
+
+function goToEid(i) {
+  eidIndex = i;
+  document.querySelectorAll('.eid-slide').forEach((s, k) => s.classList.toggle('active', k === i));
+  document.querySelectorAll('.eid-dot').forEach((d, k) => d.classList.toggle('active', k === i));
+  if (i === 1) setTimeout(runEidAnimation, 350);
+  else resetEidAnimation();
+}
+function shiftEid() { goToEid(eidIndex === 0 ? 1 : 0); }
+function startEidAuto() { eidTimer = setInterval(shiftEid, 24000); }
+function stopEidAuto() { clearInterval(eidTimer); }
+
+const eidCar = document.getElementById('eidCarousel');
+if (eidCar) {
+  eidCar.addEventListener('mouseenter', stopEidAuto);
+  eidCar.addEventListener('mouseleave', startEidAuto);
+  startEidAuto();
+}
+
+/* ── Carrusel Cursillo ── */
+let curIndex = 0;
+const curTotal = 4;
+let curTimer = null;
+
+function goToCur(i) {
+  curIndex = i;
+  document.querySelectorAll('.cur-slide').forEach((s, k) => s.classList.toggle('active', k === i));
+  document.querySelectorAll('.cur-dot').forEach((d, k) => d.classList.toggle('active', k === i));
+}
+function shiftCur() { goToCur((curIndex + 1) % curTotal); }
+function startCurAuto() { curTimer = setInterval(shiftCur, 12000); }
+function stopCurAuto() { clearInterval(curTimer); }
+
+const curCar = document.getElementById('curCarousel');
+if (curCar) {
+  curCar.addEventListener('mouseenter', stopCurAuto);
+  curCar.addEventListener('mouseleave', startCurAuto);
+  startCurAuto();
+}
+
+
+
 </script>
 </body>
 </html>
